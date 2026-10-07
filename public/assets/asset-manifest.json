@@ -1,0 +1,1074 @@
+{
+  "generatedBy": "scripts/build-asset-manifest.mjs",
+  "packs": {
+    "characters": {
+      "name": "Kenney Mini Characters 1.0",
+      "sourcePage": "https://kenney.nl/assets/mini-characters",
+      "license": "CC0-1.0"
+    },
+    "town": {
+      "name": "Kenney Fantasy Town Kit 2.0",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0"
+    },
+    "suburban": {
+      "name": "Kenney City Kit (Suburban) 2.0",
+      "sourcePage": "https://kenney.nl/assets/city-kit-suburban",
+      "license": "CC0-1.0"
+    }
+  },
+  "assets": [
+    {
+      "id": "characters/character-female-a",
+      "localPath": "/assets/characters/character-female-a.glb",
+      "sourcePage": "https://kenney.nl/assets/mini-characters",
+      "license": "CC0-1.0",
+      "sha256": "8cfcff43460da8b421f2a7fdfb43ec177321cad2746db9497cbf128d5806e2a8",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 2,
+      "availableClips": [
+        "static",
+        "idle",
+        "walk",
+        "sprint",
+        "jump",
+        "fall",
+        "crouch",
+        "sit",
+        "drive",
+        "die",
+        "pick-up",
+        "emote-yes",
+        "emote-no",
+        "holding-right",
+        "holding-left",
+        "holding-both",
+        "holding-right-shoot",
+        "holding-left-shoot",
+        "holding-both-shoot",
+        "attack-melee-right",
+        "attack-melee-left",
+        "attack-kick-right",
+        "attack-kick-left",
+        "interact-right",
+        "interact-left",
+        "wheelchair-sit",
+        "wheelchair-look-left",
+        "wheelchair-look-right",
+        "wheelchair-move-forward",
+        "wheelchair-move-back",
+        "wheelchair-move-left",
+        "wheelchair-move-right"
+      ],
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "run": "sprint",
+        "work": "interact-right",
+        "attack": "holding-right-shoot",
+        "hit": null
+      },
+      "modelScale": 1.45,
+      "forwardYawOffset": 0,
+      "footOffset": 0
+    },
+    {
+      "id": "characters/character-female-b",
+      "localPath": "/assets/characters/character-female-b.glb",
+      "sourcePage": "https://kenney.nl/assets/mini-characters",
+      "license": "CC0-1.0",
+      "sha256": "2288438e7baf9acc91a870c82dc00d66710bb486592cfc3474ef8ed93a03863a",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 2,
+      "availableClips": [
+        "static",
+        "idle",
+        "walk",
+        "sprint",
+        "jump",
+        "fall",
+        "crouch",
+        "sit",
+        "drive",
+        "die",
+        "pick-up",
+        "emote-yes",
+        "emote-no",
+        "holding-right",
+        "holding-left",
+        "holding-both",
+        "holding-right-shoot",
+        "holding-left-shoot",
+        "holding-both-shoot",
+        "attack-melee-right",
+        "attack-melee-left",
+        "attack-kick-right",
+        "attack-kick-left",
+        "interact-right",
+        "interact-left",
+        "wheelchair-sit",
+        "wheelchair-look-left",
+        "wheelchair-look-right",
+        "wheelchair-move-forward",
+        "wheelchair-move-back",
+        "wheelchair-move-left",
+        "wheelchair-move-right"
+      ],
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "run": "sprint",
+        "work": "interact-right",
+        "attack": "holding-right-shoot",
+        "hit": null
+      },
+      "modelScale": 1.45,
+      "forwardYawOffset": 0,
+      "footOffset": 0
+    },
+    {
+      "id": "characters/character-female-c",
+      "localPath": "/assets/characters/character-female-c.glb",
+      "sourcePage": "https://kenney.nl/assets/mini-characters",
+      "license": "CC0-1.0",
+      "sha256": "3cd9e1b5d6409fce0ba1af617d9e008c3069493185a4c100f49fb99a2626a055",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 2,
+      "availableClips": [
+        "static",
+        "idle",
+        "walk",
+        "sprint",
+        "jump",
+        "fall",
+        "crouch",
+        "sit",
+        "drive",
+        "die",
+        "pick-up",
+        "emote-yes",
+        "emote-no",
+        "holding-right",
+        "holding-left",
+        "holding-both",
+        "holding-right-shoot",
+        "holding-left-shoot",
+        "holding-both-shoot",
+        "attack-melee-right",
+        "attack-melee-left",
+        "attack-kick-right",
+        "attack-kick-left",
+        "interact-right",
+        "interact-left",
+        "wheelchair-sit",
+        "wheelchair-look-left",
+        "wheelchair-look-right",
+        "wheelchair-move-forward",
+        "wheelchair-move-back",
+        "wheelchair-move-left",
+        "wheelchair-move-right"
+      ],
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "run": "sprint",
+        "work": "interact-right",
+        "attack": "holding-right-shoot",
+        "hit": null
+      },
+      "modelScale": 1.45,
+      "forwardYawOffset": 0,
+      "footOffset": 0
+    },
+    {
+      "id": "characters/character-female-d",
+      "localPath": "/assets/characters/character-female-d.glb",
+      "sourcePage": "https://kenney.nl/assets/mini-characters",
+      "license": "CC0-1.0",
+      "sha256": "67f61708743bd34f91a4c2ba8160b61bf2e7d4ec2ca6647dfe99873422561410",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 2,
+      "availableClips": [
+        "static",
+        "idle",
+        "walk",
+        "sprint",
+        "jump",
+        "fall",
+        "crouch",
+        "sit",
+        "drive",
+        "die",
+        "pick-up",
+        "emote-yes",
+        "emote-no",
+        "holding-right",
+        "holding-left",
+        "holding-both",
+        "holding-right-shoot",
+        "holding-left-shoot",
+        "holding-both-shoot",
+        "attack-melee-right",
+        "attack-melee-left",
+        "attack-kick-right",
+        "attack-kick-left",
+        "interact-right",
+        "interact-left",
+        "wheelchair-sit",
+        "wheelchair-look-left",
+        "wheelchair-look-right",
+        "wheelchair-move-forward",
+        "wheelchair-move-back",
+        "wheelchair-move-left",
+        "wheelchair-move-right"
+      ],
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "run": "sprint",
+        "work": "interact-right",
+        "attack": "holding-right-shoot",
+        "hit": null
+      },
+      "modelScale": 1.45,
+      "forwardYawOffset": 0,
+      "footOffset": 0
+    },
+    {
+      "id": "characters/character-male-a",
+      "localPath": "/assets/characters/character-male-a.glb",
+      "sourcePage": "https://kenney.nl/assets/mini-characters",
+      "license": "CC0-1.0",
+      "sha256": "77572792bfe2773b715b8cd8e18644b52b3e1f155fe10450254b50f9c364382a",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 2,
+      "availableClips": [
+        "static",
+        "idle",
+        "walk",
+        "sprint",
+        "jump",
+        "fall",
+        "crouch",
+        "sit",
+        "drive",
+        "die",
+        "pick-up",
+        "emote-yes",
+        "emote-no",
+        "holding-right",
+        "holding-left",
+        "holding-both",
+        "holding-right-shoot",
+        "holding-left-shoot",
+        "holding-both-shoot",
+        "attack-melee-right",
+        "attack-melee-left",
+        "attack-kick-right",
+        "attack-kick-left",
+        "interact-right",
+        "interact-left",
+        "wheelchair-sit",
+        "wheelchair-look-left",
+        "wheelchair-look-right",
+        "wheelchair-move-forward",
+        "wheelchair-move-back",
+        "wheelchair-move-left",
+        "wheelchair-move-right"
+      ],
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "run": "sprint",
+        "work": "interact-right",
+        "attack": "holding-right-shoot",
+        "hit": null
+      },
+      "modelScale": 1.45,
+      "forwardYawOffset": 0,
+      "footOffset": 0
+    },
+    {
+      "id": "characters/character-male-b",
+      "localPath": "/assets/characters/character-male-b.glb",
+      "sourcePage": "https://kenney.nl/assets/mini-characters",
+      "license": "CC0-1.0",
+      "sha256": "791fc0c203924c175c0a3d5b60d030daf36797b039506689cf7cd01ef5253b3c",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 2,
+      "availableClips": [
+        "static",
+        "idle",
+        "walk",
+        "sprint",
+        "jump",
+        "fall",
+        "crouch",
+        "sit",
+        "drive",
+        "die",
+        "pick-up",
+        "emote-yes",
+        "emote-no",
+        "holding-right",
+        "holding-left",
+        "holding-both",
+        "holding-right-shoot",
+        "holding-left-shoot",
+        "holding-both-shoot",
+        "attack-melee-right",
+        "attack-melee-left",
+        "attack-kick-right",
+        "attack-kick-left",
+        "interact-right",
+        "interact-left",
+        "wheelchair-sit",
+        "wheelchair-look-left",
+        "wheelchair-look-right",
+        "wheelchair-move-forward",
+        "wheelchair-move-back",
+        "wheelchair-move-left",
+        "wheelchair-move-right"
+      ],
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "run": "sprint",
+        "work": "interact-right",
+        "attack": "holding-right-shoot",
+        "hit": null
+      },
+      "modelScale": 1.45,
+      "forwardYawOffset": 0,
+      "footOffset": 0
+    },
+    {
+      "id": "characters/character-male-c",
+      "localPath": "/assets/characters/character-male-c.glb",
+      "sourcePage": "https://kenney.nl/assets/mini-characters",
+      "license": "CC0-1.0",
+      "sha256": "672a6506f7475bbd655da1d7ff712c1729a430f134c62385a4e5d3c1378acb40",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 2,
+      "availableClips": [
+        "static",
+        "idle",
+        "walk",
+        "sprint",
+        "jump",
+        "fall",
+        "crouch",
+        "sit",
+        "drive",
+        "die",
+        "pick-up",
+        "emote-yes",
+        "emote-no",
+        "holding-right",
+        "holding-left",
+        "holding-both",
+        "holding-right-shoot",
+        "holding-left-shoot",
+        "holding-both-shoot",
+        "attack-melee-right",
+        "attack-melee-left",
+        "attack-kick-right",
+        "attack-kick-left",
+        "interact-right",
+        "interact-left",
+        "wheelchair-sit",
+        "wheelchair-look-left",
+        "wheelchair-look-right",
+        "wheelchair-move-forward",
+        "wheelchair-move-back",
+        "wheelchair-move-left",
+        "wheelchair-move-right"
+      ],
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "run": "sprint",
+        "work": "interact-right",
+        "attack": "holding-right-shoot",
+        "hit": null
+      },
+      "modelScale": 1.45,
+      "forwardYawOffset": 0,
+      "footOffset": 0
+    },
+    {
+      "id": "characters/character-male-d",
+      "localPath": "/assets/characters/character-male-d.glb",
+      "sourcePage": "https://kenney.nl/assets/mini-characters",
+      "license": "CC0-1.0",
+      "sha256": "dd12b2e75ffb1cdb45aaec3916c3d6e732929ccb4a8b89b946f69baaabfa64da",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 2,
+      "availableClips": [
+        "static",
+        "idle",
+        "walk",
+        "sprint",
+        "jump",
+        "fall",
+        "crouch",
+        "sit",
+        "drive",
+        "die",
+        "pick-up",
+        "emote-yes",
+        "emote-no",
+        "holding-right",
+        "holding-left",
+        "holding-both",
+        "holding-right-shoot",
+        "holding-left-shoot",
+        "holding-both-shoot",
+        "attack-melee-right",
+        "attack-melee-left",
+        "attack-kick-right",
+        "attack-kick-left",
+        "interact-right",
+        "interact-left",
+        "wheelchair-sit",
+        "wheelchair-look-left",
+        "wheelchair-look-right",
+        "wheelchair-move-forward",
+        "wheelchair-move-back",
+        "wheelchair-move-left",
+        "wheelchair-move-right"
+      ],
+      "clips": {
+        "idle": "idle",
+        "walk": "walk",
+        "run": "sprint",
+        "work": "interact-right",
+        "attack": "holding-right-shoot",
+        "hit": null
+      },
+      "modelScale": 1.45,
+      "forwardYawOffset": 0,
+      "footOffset": 0
+    },
+    {
+      "id": "characters/Textures/colormap",
+      "localPath": "/assets/characters/Textures/colormap.png",
+      "sourcePage": "https://kenney.nl/assets/mini-characters",
+      "license": "CC0-1.0",
+      "sha256": "0d4947d34ff32acf4a359c7f22ca784e057e7e72f622170a9a77b6fc88fdb70e",
+      "modified": false
+    },
+    {
+      "id": "town/banner-green",
+      "localPath": "/assets/town/banner-green.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "5c9a1bb7d564270306fe438fd4a141fc6de0d102b355bbd1d2710249c489868a",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/banner-red",
+      "localPath": "/assets/town/banner-red.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "4e4a83de16e5979d2b34bb206d3bf3703a9039711bc658b37e3738d43090703d",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/fence",
+      "localPath": "/assets/town/fence.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "92261b9419108d84f3db0def5eadeffa783032029897562b1f512e4a7570ef48",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/fountain-round",
+      "localPath": "/assets/town/fountain-round.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "8d19741e2cca6cbdce114b950b4aa12af625979bbc17b2910ef2366834af5565",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/lantern",
+      "localPath": "/assets/town/lantern.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "f270637e3083d6e84a30626ee05df2b09597a642985a7f5c3e4ab5bb1c7a8d55",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/pillar-stone",
+      "localPath": "/assets/town/pillar-stone.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "1eda742ccbc67ead6edead25c687f55d8671b88786b9e23c08ae7982bccb4b7c",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/planks",
+      "localPath": "/assets/town/planks.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "619705afa7ad290bfa499a701fd7ea07210ad535126cb3abc245b6f16e1420ab",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/poles",
+      "localPath": "/assets/town/poles.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "5e6e9cbbcf29b042191781f830f928471c57f1dc7843ee33e2f7c1bff3edf522",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/rock-large",
+      "localPath": "/assets/town/rock-large.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "425bea0dd3c8d9198a067a2faad1df8860c5b9eb53560ce5c67347a79852b9d1",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/rock-small",
+      "localPath": "/assets/town/rock-small.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "2f2ca3e9970124b81bde77cec3b1a337410a5c76336ce5dec5760aff1b415316",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/rock-wide",
+      "localPath": "/assets/town/rock-wide.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "236082a8c9dec4cef61f00f7f77e4a2050d1083852af65d27dd3c16a53c54b64",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/roof-gable",
+      "localPath": "/assets/town/roof-gable.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "4bb6bdbcadbb8ebeb69d720e29f6c2e57c99d98966baa41fd86914d3c13d6039",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/roof-high-gable",
+      "localPath": "/assets/town/roof-high-gable.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "21c54b2645ba33846f43410e6cef4d4f9239bc172bfb12f3227a6ec232977e2d",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/roof-high-point",
+      "localPath": "/assets/town/roof-high-point.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "dd26c8d572f05a4725317de01415a17819b2d12cf01c8907bb2116b4ad8e85e9",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/roof-point",
+      "localPath": "/assets/town/roof-point.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "a7dfd157128e04105e976d7a47f772e95e4bd9f3d73b87a00b43861f406b94f8",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/stall-green",
+      "localPath": "/assets/town/stall-green.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "2da2f7b31cde5d943d7c08c457bbb39797ef0a607921fde0b8455f338ce40205",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/stall-red",
+      "localPath": "/assets/town/stall-red.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "aa20a630f417032c46aaefbc779fd2b3355b451bf05d31acc36fd664146866b1",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/tree-crooked",
+      "localPath": "/assets/town/tree-crooked.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "da4349701dd3fc474f7bb03cfe8b230bec0919025d8d1ecac0d1061a23c5e910",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/tree-high-round",
+      "localPath": "/assets/town/tree-high-round.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "7f372e338cbf5514a41e8d2afda81acd67277a4c5ad4e6e35a9acfa4a6e3bc4b",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/tree",
+      "localPath": "/assets/town/tree.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "e8d81b97297de62699b92559cee7b247da84b1815df2515e42fd5a318a30b8d7",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/wall-broken",
+      "localPath": "/assets/town/wall-broken.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "043f74b83254c32379d0fe60b066c5ded7f3396ccc91df443aea1763d492fa23",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/wall-door",
+      "localPath": "/assets/town/wall-door.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "79b2d40db110ca96a6e77d4261da665fdf8c68f4c20c2afef5bce1c28ad72857",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/wall-window-glass",
+      "localPath": "/assets/town/wall-window-glass.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "b0d666b1850d0b92734bdea736a062b4424fd909d13495f4a73719eb51bb41f4",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/wall-window-round",
+      "localPath": "/assets/town/wall-window-round.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "ec911d8b3bd041ff46d5f5b21a04c2e1bcd006c51262866da94dc24a2c21e41c",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/wall-window-stone",
+      "localPath": "/assets/town/wall-window-stone.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "7ed37c9b795febc8b414d75ccdf9e8c04a94a791a9adbf6e548ed6ddbf0aba3c",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/wall-wood-broken",
+      "localPath": "/assets/town/wall-wood-broken.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "53b61a341f0d6bd82256955f8dc29c4c714fcee115a9e803b28938fcfe1ae597",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/wall-wood-door",
+      "localPath": "/assets/town/wall-wood-door.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "2aa4e982fcb6434be4e6051fcee7972799ff5350a3f36ca8bf71530b84608123",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/wall-wood-window-glass",
+      "localPath": "/assets/town/wall-wood-window-glass.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "e0bb383a908d473181ad89ad7c676a0632f7ecd0f23e5f912216391d3e62bb69",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/wall-wood-window-round",
+      "localPath": "/assets/town/wall-wood-window-round.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "8bc2d9ce7246b1c9896ff2b285668f908755131faf2c2096b23b4a411f7e9aa9",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/wall-wood-window-shutters",
+      "localPath": "/assets/town/wall-wood-window-shutters.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "c45a63690760cd5de3842ffbe222092e8cd483524679c4ba92fef4d1e52f7248",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/wall-wood",
+      "localPath": "/assets/town/wall-wood.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "8699614fdbc99f565942709c0977c964e2c12f3b3c60098a6e2c397c973f08db",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/wall",
+      "localPath": "/assets/town/wall.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "cab1dff37610e2a214237cc62ec0b1506e8fd76bb66c29f6c585b4b643b569c4",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/wheel",
+      "localPath": "/assets/town/wheel.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "c049e479d0fa31d7cae7a3f4fe239172e7117789fdd10be4be5bddde6239d59f",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/windmill",
+      "localPath": "/assets/town/windmill.glb",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "72562df164f5fd36670521462da8f4161cf2c4c1c889799443f0fb44532ad5db",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "town/Textures/colormap",
+      "localPath": "/assets/town/Textures/colormap.png",
+      "sourcePage": "https://kenney.nl/assets/fantasy-town-kit",
+      "license": "CC0-1.0",
+      "sha256": "4aac939dc33195e35caf8c382ee3cb170054da763577f22d3c22692ec6afccdf",
+      "modified": false
+    },
+    {
+      "id": "suburban/building-type-a",
+      "localPath": "/assets/suburban/building-type-a.glb",
+      "sourcePage": "https://kenney.nl/assets/city-kit-suburban",
+      "license": "CC0-1.0",
+      "sha256": "49f32e20b9dcd24b1c8f6d6488807b8c8cb684cbb595bfb0bb36ad903e470faa",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "suburban/building-type-c",
+      "localPath": "/assets/suburban/building-type-c.glb",
+      "sourcePage": "https://kenney.nl/assets/city-kit-suburban",
+      "license": "CC0-1.0",
+      "sha256": "86a69f30f1a09461283e158514945ae5cc9d56357b0ddc83a9a3f0eecd113591",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "suburban/building-type-f",
+      "localPath": "/assets/suburban/building-type-f.glb",
+      "sourcePage": "https://kenney.nl/assets/city-kit-suburban",
+      "license": "CC0-1.0",
+      "sha256": "6f778f50d7f03c86f9a018e428cf8ffdd9e918df09954c0651d1c9559584a22b",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "suburban/building-type-j",
+      "localPath": "/assets/suburban/building-type-j.glb",
+      "sourcePage": "https://kenney.nl/assets/city-kit-suburban",
+      "license": "CC0-1.0",
+      "sha256": "fbdce9cb6bb6cf60a861bab36a896403aff604afbf2cb2b86676ae6f49fa2de3",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "suburban/building-type-m",
+      "localPath": "/assets/suburban/building-type-m.glb",
+      "sourcePage": "https://kenney.nl/assets/city-kit-suburban",
+      "license": "CC0-1.0",
+      "sha256": "36d31f4e45498f6229805b6a7a1577ef00230daeea4c6a4469481e9d5a0fdb7c",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "suburban/building-type-p",
+      "localPath": "/assets/suburban/building-type-p.glb",
+      "sourcePage": "https://kenney.nl/assets/city-kit-suburban",
+      "license": "CC0-1.0",
+      "sha256": "561b2eff15bd2bfe2799a8a049cafc70a1c7bfb6e35f3b2a4d95c8f4f376458c",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "suburban/building-type-t",
+      "localPath": "/assets/suburban/building-type-t.glb",
+      "sourcePage": "https://kenney.nl/assets/city-kit-suburban",
+      "license": "CC0-1.0",
+      "sha256": "3b729b473fc995a632ebc4d96cc8f18ef9d43bdc1a6c26010a02ec0b298c34e7",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "suburban/planter",
+      "localPath": "/assets/suburban/planter.glb",
+      "sourcePage": "https://kenney.nl/assets/city-kit-suburban",
+      "license": "CC0-1.0",
+      "sha256": "a876e87d908f0397dcaf94b7705835447825c4c5b39195319535415386542c17",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "suburban/tree-large",
+      "localPath": "/assets/suburban/tree-large.glb",
+      "sourcePage": "https://kenney.nl/assets/city-kit-suburban",
+      "license": "CC0-1.0",
+      "sha256": "16d1f95c149bc727a953a473cf20bf21de9bf1a88747c4f9d2eeb4ac7d43e291",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "suburban/tree-small",
+      "localPath": "/assets/suburban/tree-small.glb",
+      "sourcePage": "https://kenney.nl/assets/city-kit-suburban",
+      "license": "CC0-1.0",
+      "sha256": "5f63359e5f392609d7617cc98070855ca1ffd4f4b4bc3978a5ff56ece88a58d6",
+      "modified": false,
+      "externalTextures": [
+        "Textures/colormap.png"
+      ],
+      "skins": 0,
+      "availableClips": []
+    },
+    {
+      "id": "suburban/Textures/colormap",
+      "localPath": "/assets/suburban/Textures/colormap.png",
+      "sourcePage": "https://kenney.nl/assets/city-kit-suburban",
+      "license": "CC0-1.0",
+      "sha256": "9b5de86078c25ef02351a80d35ff3c978693a1044565b73eedd9ae9b5b80665d",
+      "modified": false
+    }
+  ]
+}
