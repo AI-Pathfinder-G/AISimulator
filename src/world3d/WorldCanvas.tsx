@@ -1,61 +1,39 @@
-import { useRef, useEffect } from 'react';
-import * as BABYLON from '@babylonjs/core';
-import { createScene } from './createScene';
+// React 생명주기: 캔버스 1개, Engine 1개. 언마운트 때 루프·이벤트·GPU 리소스 해제 (설계문서 7.3)
+import { useEffect, useRef } from 'react';
+import { createShowcaseScene, WebGLUnavailableError, type SceneCallbacks, type ShowcaseController } from './createScene';
+import { installSceneTestHook } from './sceneTestHook';
 
-interface WorldCanvasProps {
-  onResidentSelect: (residentId: string | null) => void;
-  weather: 'clear' | 'rain' | 'snow' | 'storm';
-  era: 'agrarian' | 'stone' | 'modern';
-  mode: 'showcase' | 'simulation';
-  combatActive: boolean;
-  missileActive: boolean;
+interface Props {
+  callbacks: SceneCallbacks;
+  onController: (c: ShowcaseController | null) => void;
+  onFatal: (msg: string) => void;
 }
 
-export const WorldCanvas = ({ 
-  onResidentSelect, 
-  weather, 
-  era,
-  mode,
-  combatActive, 
-  missileActive 
-}: WorldCanvasProps) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+export function WorldCanvas({ callbacks, onController, onFatal }: Props) {
+  const ref = useRef<HTMLCanvasElement>(null);
+  const cbRef = useRef(callbacks);
+  useEffect(() => { cbRef.current = callbacks; }, [callbacks]);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
+    const canvas = ref.current;
     if (!canvas) return;
-
-    const engine = new BABYLON.Engine(canvas, true);
-    const scene = createScene(
-      engine,
-      canvas,
-      onResidentSelect,
-      weather,
-      era,
-      mode,
-      combatActive,
-      missileActive
-    );
-
-    // Run the render loop
-    engine.runRenderLoop(() => {
-      scene.render();
-    });
-
-    // Resize
-    window.addEventListener('resize', () => {
-      engine.resize();
-    });
-
-    // Cleanup
-    return () => {
-      engine.dispose();
-      scene.dispose();
-      window.removeEventListener('resize', () => {
-        engine.resize();
+    let ctrl: ShowcaseController | null = null;
+    try {
+      ctrl = createShowcaseScene(canvas, {
+        onReady: () => cbRef.current.onReady?.(),
+        onProgress: (d, t) => cbRef.current.onProgress?.(d, t),
+        onSelect: (s) => cbRef.current.onSelect?.(s),
+        onLog: (e) => cbRef.current.onLog?.(e),
+        onError: (m) => cbRef.current.onError?.(m),
       });
-    };
-  }, [onResidentSelect, weather, era, mode, combatActive, missileActive]);
+    } catch (e) {
+      onFatal(e instanceof WebGLUnavailableError ? e.message : `3D 장면 생성 실패: ${(e as Error).message}`);
+      return;
+    }
+    onController(ctrl);
+    const uninstall = import.meta.env.DEV ? installSceneTestHook(ctrl) : () => {};
+    return () => { uninstall(); onController(null); ctrl?.dispose(); };
+  }, [onController, onFatal]);
 
-  return <canvas ref={canvasRef} style={{ width: '100%', height: '100%' }} />;
-};
+  return <canvas ref={ref} className="world-canvas" data-testid="world-canvas" touch-action="none" />;
+}
