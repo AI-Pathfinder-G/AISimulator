@@ -73,7 +73,7 @@ export class BattleScript {
     for (const u of this.units) {
       u.visible = true;
       const idx = this.units.filter((x) => x.squadId === u.squadId).indexOf(u);
-      this.sendTo(u, this.formation(this.setup.line[u.squadId], idx), 1.6, 'walk');
+      this.sendTo(u, this.formation(this.setup.line[u.squadId], idx), 2.4, 'run');
     }
     return true;
   }

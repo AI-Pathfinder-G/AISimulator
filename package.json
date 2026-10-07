@@ -5,8 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:showcase": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
+    "test": "vitest run",
+    "check": "node scripts/check.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "test:e2e:showcase": "playwright test",
+    "capture:showcase": "playwright test --grep @capture",
+    "assets:manifest": "node scripts/build-asset-manifest.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
