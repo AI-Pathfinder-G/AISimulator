@@ -117,7 +117,7 @@ export const createScene = (
     new BABYLON.Vector3(-5, 0, 5),
     new BABYLON.Vector3(5, 0, -5),
   ];
-  treePositions.forEach((pos, index) =  => {
+  treePositions.forEach((pos, index) => {
     const trunk = BABYLON.MeshBuilder.CreateBox(`trunk_${index}`, { width: 0.5, height: 2, depth: 0.5 }, scene);
     trunk.position = pos.add(new BABYLON.Vector3(0, 1, 0));
     const trunkMaterial = new BABYLON.StandardMaterial(`trunkMat_${index}`, scene);
@@ -227,7 +227,9 @@ export const createScene = (
   road2.material = roadMaterial; // same road material as village1
 
   // Create 24 residents (boxes) and assign them to villages
-  type Resident = {
+type ResidentState = 'labor' | 'rest' | 'social';
+
+type Resident = {
     id: string;
     mesh: BABYLON.Mesh;
     originalPosition: BABYLON.Vector3;
@@ -237,99 +239,250 @@ export const createScene = (
     waypoints: BABYLON.Vector3[];
     speed: number;
     isWalking: boolean;
-  };
+    state: ResidentState;
+    stateTimer: number;
+    socialPartner: string | null;
+};
 
-  const residents: Resident[] = [];
-  const village1Waypoints = [
-    new BABYLON.Vector3(-8, 0, -8),
-    new BABYLON.Vector3(-4, 0, -4),
-    new BABYLON.Vector3(0, 0, -8),
-    new BABYLON.Vector3(-4, 0, -12),
-  ];
-  const village2Waypoints = [
-    new BABYLON.Vector3(8, 0, 8),
-    new BABYLON.Vector3(4, 0, 4),
-    new BABYLON.Vector3(0, 0, 8),
-    new BABYLON.Vector3(4, 0, 12),
-  ];
+const residents: Resident[] = [];
+   // Waypoint sets for each village and activity type
+   const village1LaborWaypoints = [
+     new BABYLON.Vector3(-8, 0, -8),
+     new BABYLON.Vector3(-6, 0, -6),
+     new BABYLON.Vector3(-4, 0, -4),
+     new BABYLON.Vector3(-2, 0, -2),
+     new BABYLON.Vector3(0, 0, 0),
+   ];
+   const village1RestWaypoints = [
+     new BABYLON.Vector3(-10, 0, -10),
+     new BABYLON.Vector3(-12, 0, -8),
+     new BABYLON.Vector3(-8, 0, -12),
+     new BABYLON.Vector3(-6, 0, -10),
+   ];
+   const village1SocialWaypoints = [
+     new BABYLON.Vector3(-4, 0, -8),
+     new BABYLON.Vector3(-8, 0, -4),
+     new BABYLON.Vector3(-6, 0, -6),
+     new BABYLON.Vector3(-2, 0, -10),
+   ];
+   
+   const village2LaborWaypoints = [
+     new BABYLON.Vector3(8, 0, 8),
+     new BABYLON.Vector3(6, 0, 6),
+     new BABYLON.Vector3(4, 0, 4),
+     new BABYLON.Vector3(2, 0, 2),
+     new BABYLON.Vector3(0, 0, 0),
+   ];
+   const village2RestWaypoints = [
+     new BABYLON.Vector3(10, 0, 10),
+     new BABYLON.Vector3(12, 0, 8),
+     new BABYLON.Vector3(8, 0, 12),
+     new BABYLON.Vector3(6, 0, 10),
+   ];
+   const village2SocialWaypoints = [
+     new BABYLON.Vector3(4, 0, 8),
+     new BABYLON.Vector3(8, 0, 4),
+     new BABYLON.Vector3(6, 0, 6),
+     new BABYLON.Vector3(2, 0, 10),
+   ];
 
-  for (let i = 0; i < 24; i++) {
-    const resident = BABYLON.MeshBuilder.CreateBox(`resident_${i}`, { width: 0.4, height: 0.8, depth: 0.4 }, scene);
-    // Place resident slightly above ground
-    const originalPosition = new BABYLON.Vector3(
-      (Math.random() - 0.5) * 10,
-      0.4,
-      (Math.random() - 0.5) * 10
-    );
-    resident.position = originalPosition;
-    const residentMaterial = new BABYLON.StandardMaterial(`residentMat_${i}`, scene);
-    // Assign color based on village
-    let residentColor = new BABYLON.Color3(0.8, 0.6, 0.4); // default brownish
-    if (i < 12) {
-      // Village 1
-      residentColor = new BABYLON.Color3(0.8, 0.6, 0.4); // brown
-      residents.push({
-        id: `resident_${i}`,
-        mesh: resident,
-        originalPosition,
-        originalColor: residentColor,
-        village: 'village1',
-        targetIndex: 0,
-        waypoints: village1Waypoints,
-        speed: 0.5 + Math.random() * 0.5,
-        isWalking: false,
-      });
-    } else {
-      // Village 2
-      residentColor = new BABYLON.Color3(0.6, 0.6, 0.4); // slightly different brown
-      residents.push({
-        id: `resident_${i}`,
-        mesh: resident,
-        originalPosition,
-        originalColor: residentColor,
-        village: 'village2',
-        targetIndex: 0,
-        waypoints: village2Waypoints,
-        speed: 0.5 + Math.random() * 0.5,
-        isWalking: false,
-      });
-    }
-    resident.material = residentMaterial;
-  }
+for (let i = 0; i < 24; i++) {
+     const resident = BABYLON.MeshBuilder.CreateBox(`resident_${i}`, { width: 0.4, height: 0.8, depth: 0.4 }, scene);
+     // Place resident slightly above ground
+     const originalPosition = new BABYLON.Vector3(
+       (Math.random() - 0.5) * 10,
+       0.4,
+       (Math.random() - 0.5) * 10
+     );
+     resident.position = originalPosition;
+     const residentMaterial = new BABYLON.StandardMaterial(`residentMat_${i}`, scene);
+     // Assign color based on village
+     let residentColor = new BABYLON.Color3(0.8, 0.6, 0.4); // default brownish
+     let village: 'village1' | 'village2';
+     let waypoints: BABYLON.Vector3[];
+     
+     // Determine village and assign initial state
+     if (i < 12) {
+       // Village 1
+       village = 'village1';
+       residentColor = new BABYLON.Color3(0.8, 0.6, 0.4); // brown
+       
+       // Randomly assign initial state
+       const stateRand = Math.random();
+       if (stateRand < 0.4) {
+         waypoints = village1LaborWaypoints;
+       } else if (stateRand < 0.7) {
+         waypoints = village1RestWaypoints;
+       } else {
+         waypoints = village1SocialWaypoints;
+       }
+     } else {
+       // Village 2
+       village = 'village2';
+       residentColor = new BABYLON.Color3(0.6, 0.6, 0.4); // slightly different brown
+       
+       // Randomly assign initial state
+       const stateRand = Math.random();
+       if (stateRand < 0.4) {
+         waypoints = village2LaborWaypoints;
+       } else if (stateRand < 0.7) {
+         waypoints = village2RestWaypoints;
+       } else {
+         waypoints = village2SocialWaypoints;
+       }
+     }
+     
+     residents.push({
+       id: `resident_${i}`,
+       mesh: resident,
+       originalPosition,
+       originalColor: residentColor,
+       village: village,
+       targetIndex: 0,
+       waypoints: waypoints,
+       speed: 0.5 + Math.random() * 0.5,
+       isWalking: false,
+       state: village === 'village1' ? 
+         (i < 4 ? 'labor' : (i < 8 ? 'rest' : 'social')) : 
+         (i < 16 ? 'labor' : (i < 20 ? 'rest' : 'social')),
+       stateTimer: 0,
+       socialPartner: null
+     });
+     resident.material = residentMaterial;
+   }
 
-  // Simple animation loop for residents
-  scene.onBeforeRenderObservable.add(() => {
-    residents.forEach(res => {
-      if (!res.isWalking) {
-        // Pick a new target
-        res.targetIndex = Math.floor(Math.random() * res.waypoints.length);
-        res.isWalking = true;
-      }
+// Updated animation loop for residents with state transitions and social interaction
+   scene.onBeforeRenderObservable.add(() => {
+     // First, detect social interactions (residents close to each other)
+     residents.forEach(res => {
+       // Reset social partner if not already set through interaction
+       if (res.state === 'social' && res.socialPartner === null) {
+         // Look for nearby residents to interact with
+         const interactionRadius = 1.5;
+         for (const other of residents) {
+           if (other.id !== res.id && 
+               other.village === res.village && 
+               other.state === 'social') {
+             const distance = res.mesh.position.distanceTo(other.mesh.position);
+             if (distance < interactionRadius) {
+               // Set mutual social partnership
+               res.socialPartner = other.id;
+               other.socialPartner = res.id;
+               break;
+             }
+           }
+         }
+       }
+     });
 
-      const target = res.waypoints[res.targetIndex];
-      const direction = target.subtract(res.mesh.position);
-      const distance = direction.length();
+     // Update each resident
+     residents.forEach(res => {
+       // Update state timer
+       res.stateTimer += engine.getDeltaTime() / 1000; // Convert to seconds
+       
+       // Change state after certain time (every 10-15 seconds)
+       if (res.stateTimer > (10 + Math.random() * 5)) {
+         res.stateTimer = 0;
+         
+         // Determine new state based on current state and village
+         let newState: ResidentState = res.state;
+         const stateRand = Math.random();
+         
+         if (res.village === 'village1') {
+           if (stateRand < 0.3) newState = 'labor';
+           else if (stateRand < 0.6) newState = 'rest';
+           else newState = 'social';
+         } else {
+           // Village 2
+           if (stateRand < 0.3) newState = 'labor';
+           else if (stateRand < 0.6) newState = 'rest';
+           else newState = 'social';
+         }
+         
+         // Only change state if it's different
+         if (newState !== res.state) {
+           res.state = newState;
+           
+           // Assign new waypoints based on new state
+           switch (newState) {
+             case 'labor':
+               res.waypoints = res.village === 'village1' ? village1LaborWaypoints : village2LaborWaypoints;
+               break;
+             case 'rest':
+               res.waypoints = res.village === 'village1' ? village1RestWaypoints : village2RestWaypoints;
+               break;
+             case 'social':
+               res.waypoints = res.village === 'village1' ? village1SocialWaypoints : village2SocialWaypoints;
+               break;
+           }
+           
+           // Reset target index when changing waypoints
+           res.targetIndex = 0;
+         }
+       }
 
-      if (distance < 0.1) {
-        // Arrived at target
-        res.isWalking = false;
-        // Optionally, we could play an idle animation here
-        return;
-      }
+       // Handle movement
+       if (!res.isWalking) {
+         // Pick a new target
+         res.targetIndex = Math.floor(Math.random() * res.waypoints.length);
+         res.isWalking = true;
+       }
 
-      // Normalize direction and move
-      direction.normalize();
-      const movement = direction.scale(res.speed * engine.getDeltaTime() / 1000);
-      res.mesh.position.addInPlace(movement);
+       const target = res.waypoints[res.targetIndex];
+       const direction = target.subtract(res.mesh.position);
+       const distance = direction.length();
 
-      // Rotate to face direction of movement
-      if (direction.length() > 0) {
-        const yaw = Math.atan2(direction.x, direction.z);
-        res.mesh.rotationQuaternion = null; // Ensure we use Euler angles
-        res.mesh.rotation = new BABYLON.Vector3(0, yaw, 0);
-      }
-    });
-  });
+       if (distance < 0.1) {
+         // Arrived at target
+         res.isWalking = false;
+         // Optionally, we could play an idle animation here
+         return;
+       }
+
+       // Normalize direction and move
+       direction.normalize();
+       const movement = direction.scale(res.speed * engine.getDeltaTime() / 1000);
+       res.mesh.position.addInPlace(movement);
+
+       // Rotate to face direction of movement
+       if (direction.length() > 0) {
+         const yaw = Math.atan2(direction.x, direction.z);
+         res.mesh.rotationQuaternion = null; // Ensure we use Euler angles
+         res.mesh.rotation = new BABYLON.Vector3(0, yaw, 0);
+       }
+       
+       // Change color based on state for visual feedback
+       if (res.state === 'labor') {
+         // Labor: brighter color
+         const baseColor = res.village === 'village1' 
+           ? new BABYLON.Color3(0.9, 0.7, 0.5) 
+           : new BABYLON.Color3(0.7, 0.7, 0.5);
+         res.material.diffuseColor = baseColor;
+       } else if (res.state === 'rest') {
+         // Rest: darker color
+         const baseColor = res.village === 'village1' 
+           ? new BABYLON.Color3(0.6, 0.4, 0.3) 
+           : new BABYLON.Color3(0.4, 0.4, 0.3);
+         res.material.diffuseColor = baseColor;
+       } else if (res.state === 'social') {
+         // Social: pulse between colors when partnered
+         if (res.socialPartner !== null) {
+           // Pulse effect
+           const pulse = Math.sin(Date.now() * 0.005) * 0.2 + 0.8;
+           const baseColor = res.village === 'village1' 
+             ? new BABYLON.Color3(0.8, 0.6, 0.4) 
+             : new BABYLON.Color3(0.6, 0.6, 0.4);
+           res.material.diffuseColor = baseColor.scale(pulse);
+         } else {
+           // No partner yet, use standard social color
+           const baseColor = res.village === 'village1' 
+             ? new BABYLON.Color3(0.8, 0.6, 0.4) 
+             : new BABYLON.Color3(0.6, 0.6, 0.4);
+           res.material.diffuseColor = baseColor;
+         }
+       }
+     });
+   });
 
   // Picking for resident selection
   scene.onPointerObservable.add((pointerInfo: BABYLON.PointerInfo) => {
@@ -354,7 +507,6 @@ export const createScene = (
   });
 
   // These variables are used in later stages, but for G1 we just reference them to avoid unused warnings.
-  void(combatActive, missileActive, mode);
 
   return scene;
 };
